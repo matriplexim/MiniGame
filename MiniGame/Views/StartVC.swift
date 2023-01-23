@@ -28,7 +28,7 @@ class StartVC: UIViewController {
         label.text = "My Awesome Game"
         label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }

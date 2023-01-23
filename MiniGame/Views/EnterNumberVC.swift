@@ -32,7 +32,7 @@ class EnterNumberVC: UIViewController {
         textField.delegate = self
         textField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            textField.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
             textField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             textField.widthAnchor.constraint(equalToConstant: 244),
             textField.heightAnchor.constraint(equalToConstant: 44)
@@ -46,6 +46,7 @@ class EnterNumberVC: UIViewController {
         enterButton.setTitle("Enter the Number", for: .normal)
         enterButton.setTitleColor(.white, for: .normal)
         enterButton.layer.cornerRadius = 10
+        enterButton.addTarget(self, action: #selector(presenFirstTryVC), for: .touchUpInside)
         enterButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
@@ -64,6 +65,10 @@ class EnterNumberVC: UIViewController {
             }
         }
         return false
+    }
+    
+    @objc func presenFirstTryVC() {
+        present(FirstTryVC(), animated: true)
     }
     
 }
