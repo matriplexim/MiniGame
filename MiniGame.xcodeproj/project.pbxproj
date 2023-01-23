@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F79E0D7C297D4442005C1958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E0D7B297D4442005C1958 /* AppDelegate.swift */; };
 		F79E0D7E297D4442005C1958 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E0D7D297D4442005C1958 /* SceneDelegate.swift */; };
-		F79E0D80297D4442005C1958 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E0D7F297D4442005C1958 /* ViewController.swift */; };
+		F79E0D80297D4442005C1958 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E0D7F297D4442005C1958 /* StartVC.swift */; };
 		F79E0D85297D4444005C1958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F79E0D84297D4444005C1958 /* Assets.xcassets */; };
 		F79E0D88297D4444005C1958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F79E0D86297D4444005C1958 /* LaunchScreen.storyboard */; };
 		F79E0D93297D4444005C1958 /* MiniGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E0D92297D4444005C1958 /* MiniGameTests.swift */; };
@@ -38,7 +38,7 @@
 		F79E0D78297D4442005C1958 /* MiniGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79E0D7B297D4442005C1958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F79E0D7D297D4442005C1958 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F79E0D7F297D4442005C1958 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F79E0D7F297D4442005C1958 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		F79E0D84297D4444005C1958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F79E0D87297D4444005C1958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F79E0D89297D4444005C1958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,9 +97,11 @@
 		F79E0D7A297D4442005C1958 /* MiniGame */ = {
 			isa = PBXGroup;
 			children = (
+				F79E0DAD297D47ED005C1958 /* Models */,
+				F79E0DAC297D47E8005C1958 /* Views */,
+				F79E0DAE297D5687005C1958 /* Presenters */,
 				F79E0D7B297D4442005C1958 /* AppDelegate.swift */,
 				F79E0D7D297D4442005C1958 /* SceneDelegate.swift */,
-				F79E0D7F297D4442005C1958 /* ViewController.swift */,
 				F79E0D84297D4444005C1958 /* Assets.xcassets */,
 				F79E0D86297D4444005C1958 /* LaunchScreen.storyboard */,
 				F79E0D89297D4444005C1958 /* Info.plist */,
@@ -122,6 +124,28 @@
 				F79E0D9E297D4444005C1958 /* MiniGameUITestsLaunchTests.swift */,
 			);
 			path = MiniGameUITests;
+			sourceTree = "<group>";
+		};
+		F79E0DAC297D47E8005C1958 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F79E0D7F297D4442005C1958 /* StartVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F79E0DAD297D47ED005C1958 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F79E0DAE297D5687005C1958 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F79E0D80297D4442005C1958 /* ViewController.swift in Sources */,
+				F79E0D80297D4442005C1958 /* StartVC.swift in Sources */,
 				F79E0D7C297D4442005C1958 /* AppDelegate.swift in Sources */,
 				F79E0D7E297D4442005C1958 /* SceneDelegate.swift in Sources */,
 			);
