@@ -8,8 +8,10 @@
 import UIKit
 
 class StartVC: UIViewController {
-    let label = UILabel()
-    let button = UIButton(type: .system)
+    
+    let label   = UILabel()
+    let button  = UIButton(type: .system)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -37,6 +39,7 @@ class StartVC: UIViewController {
         button.setTitle("Start New Game", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(presentSecondView), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
@@ -44,6 +47,12 @@ class StartVC: UIViewController {
             button.widthAnchor.constraint(equalToConstant: 244),
             button.heightAnchor.constraint(equalToConstant: 44)
         ])
+    }
+    
+    @objc func presentSecondView() {
+        
+        present(EnterNumberVC(), animated: true)
+        
     }
     
 }
