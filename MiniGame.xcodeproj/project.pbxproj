@@ -18,6 +18,7 @@
 		F79E0DB0297E9495005C1958 /* EnterNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E0DAF297E9495005C1958 /* EnterNumberVC.swift */; };
 		F79E0DB2297EF514005C1958 /* FirstTryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E0DB1297EF514005C1958 /* FirstTryVC.swift */; };
 		F7C59A45297FCC1100F1A6D1 /* SecondTryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C59A44297FCC1100F1A6D1 /* SecondTryVC.swift */; };
+		F7C59A47297FDCFB00F1A6D1 /* ScoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C59A46297FDCFB00F1A6D1 /* ScoresVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		F79E0DAF297E9495005C1958 /* EnterNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNumberVC.swift; sourceTree = "<group>"; };
 		F79E0DB1297EF514005C1958 /* FirstTryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTryVC.swift; sourceTree = "<group>"; };
 		F7C59A44297FCC1100F1A6D1 /* SecondTryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTryVC.swift; sourceTree = "<group>"; };
+		F7C59A46297FDCFB00F1A6D1 /* ScoresVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				F79E0DAF297E9495005C1958 /* EnterNumberVC.swift */,
 				F79E0DB1297EF514005C1958 /* FirstTryVC.swift */,
 				F7C59A44297FCC1100F1A6D1 /* SecondTryVC.swift */,
+				F7C59A46297FDCFB00F1A6D1 /* ScoresVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				F79E0DB0297E9495005C1958 /* EnterNumberVC.swift in Sources */,
 				F79E0D7E297D4442005C1958 /* SceneDelegate.swift in Sources */,
 				F7C59A45297FCC1100F1A6D1 /* SecondTryVC.swift in Sources */,
+				F7C59A47297FDCFB00F1A6D1 /* ScoresVC.swift in Sources */,
 				F79E0DB2297EF514005C1958 /* FirstTryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
