@@ -17,6 +17,7 @@
 		F79E0D9F297D4444005C1958 /* MiniGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E0D9E297D4444005C1958 /* MiniGameUITestsLaunchTests.swift */; };
 		F79E0DB0297E9495005C1958 /* EnterNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E0DAF297E9495005C1958 /* EnterNumberVC.swift */; };
 		F79E0DB2297EF514005C1958 /* FirstTryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E0DB1297EF514005C1958 /* FirstTryVC.swift */; };
+		F7C59A45297FCC1100F1A6D1 /* SecondTryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C59A44297FCC1100F1A6D1 /* SecondTryVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		F79E0D9E297D4444005C1958 /* MiniGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F79E0DAF297E9495005C1958 /* EnterNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNumberVC.swift; sourceTree = "<group>"; };
 		F79E0DB1297EF514005C1958 /* FirstTryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTryVC.swift; sourceTree = "<group>"; };
+		F7C59A44297FCC1100F1A6D1 /* SecondTryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTryVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				F79E0D7F297D4442005C1958 /* StartVC.swift */,
 				F79E0DAF297E9495005C1958 /* EnterNumberVC.swift */,
 				F79E0DB1297EF514005C1958 /* FirstTryVC.swift */,
+				F7C59A44297FCC1100F1A6D1 /* SecondTryVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				F79E0D7C297D4442005C1958 /* AppDelegate.swift in Sources */,
 				F79E0DB0297E9495005C1958 /* EnterNumberVC.swift in Sources */,
 				F79E0D7E297D4442005C1958 /* SceneDelegate.swift in Sources */,
+				F7C59A45297FCC1100F1A6D1 /* SecondTryVC.swift in Sources */,
 				F79E0DB2297EF514005C1958 /* FirstTryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

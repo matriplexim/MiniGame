@@ -34,7 +34,7 @@ class EnterNumberVC: UIViewController {
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
             textField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textField.widthAnchor.constraint(equalToConstant: 244),
+            textField.widthAnchor.constraint(equalToConstant: 264),
             textField.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
@@ -51,7 +51,7 @@ class EnterNumberVC: UIViewController {
         NSLayoutConstraint.activate([
             enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             enterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            enterButton.widthAnchor.constraint(equalToConstant: 244),
+            enterButton.widthAnchor.constraint(equalToConstant: 264),
             enterButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }

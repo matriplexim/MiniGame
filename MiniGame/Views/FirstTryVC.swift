@@ -82,12 +82,12 @@ class FirstTryVC: UIViewController {
         moreButton.setTitle(">", for: .normal)
         equalsButton.setTitle("=", for: .normal)
         lessButton.setTitle("<", for: .normal)
-        moreButton.layer.cornerRadius = 10
+        moreButton.layer.cornerRadius   = 10
         equalsButton.layer.cornerRadius = 10
-        lessButton.layer.cornerRadius = 10
-        moreButton.layer.borderWidth = 1
-        equalsButton.layer.borderWidth = 1
-        lessButton.layer.borderWidth = 1
+        lessButton.layer.cornerRadius   = 10
+        moreButton.layer.borderWidth    = 1
+        equalsButton.layer.borderWidth  = 1
+        lessButton.layer.borderWidth    = 1
         moreButton.setTitleColor(.label, for: .normal)
         equalsButton.setTitleColor(.label, for: .normal)
         lessButton.setTitleColor(.label, for: .normal)
