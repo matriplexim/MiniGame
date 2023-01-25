@@ -11,8 +11,8 @@ import UIKit
 protocol MainRouter {
     func showEnterNumber(from: UIViewController)
     func showFirstTry(from: UIViewController, number: Int)
-    func showSecondTry(from: UIViewController)
-    func showScores(from: UIViewController)
+    func showSecondTry(from: UIViewController, CPUCounter: Int)
+    func showScores(from: UIViewController, myCounter: Int, CPUCounter: Int)
     func showStart(from: UIViewController)
 }
 
@@ -30,14 +30,17 @@ extension Router: MainRouter {
         from.present(vc, animated: true)
     }
     
-    func showSecondTry(from: UIViewController) {
+    func showSecondTry(from: UIViewController, CPUCounter: Int) {
         let vc = SecondTryVC()
+        vc.CPUCounter = CPUCounter
         vc.modalPresentationStyle = .fullScreen
         from.present(vc, animated: true)
     }
     
-    func showScores(from: UIViewController) {
+    func showScores(from: UIViewController, myCounter: Int, CPUCounter: Int) {
         let vc = ScoresVC()
+        vc.myCounter = myCounter
+        vc.CPUCounter = CPUCounter
         vc.modalPresentationStyle = .fullScreen
         from.present(vc, animated: true)
     }

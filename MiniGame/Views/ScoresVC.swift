@@ -9,6 +9,8 @@ import UIKit
 
 class ScoresVC: UIViewController {
     
+    var myCounter = 0
+    var CPUCounter = 0
     let router: MainRouter = Router.shared
     let titleLabel      = UILabel()
     let myCountLabel    = UILabel()
@@ -42,7 +44,7 @@ class ScoresVC: UIViewController {
     
     func configureMyCountLabelUI() {
         view.addSubview(myCountLabel)
-        myCountLabel.text = "Your's tries count: 6"
+        myCountLabel.text = "Your's tries count: \(myCounter)"
         myCountLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             myCountLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -60),
@@ -52,7 +54,7 @@ class ScoresVC: UIViewController {
     
     func configureCPUCountLabelUI() {
         view.addSubview(CPUCountLabel)
-        CPUCountLabel.text = "Computer's tries count: 8"
+        CPUCountLabel.text = "Computer's tries count: \(CPUCounter)"
         CPUCountLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             CPUCountLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
@@ -78,7 +80,13 @@ class ScoresVC: UIViewController {
     
     func configureResultLabelUI() {
         view.addSubview(resultLabel)
-        resultLabel.text = "You Win"
+        if myCounter < CPUCounter {
+            resultLabel.text = "You Win"
+        } else if CPUCounter < myCounter {
+            resultLabel.text = "CPU Win"
+        } else {
+            resultLabel.text = "Draw"
+        }
         resultLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             resultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),

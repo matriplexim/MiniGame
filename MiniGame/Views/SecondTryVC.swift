@@ -9,6 +9,12 @@ import UIKit
 
 class SecondTryVC: UIViewController {
 
+    var myCounter = 1
+    var CPUCounter = 0
+    var myNumber = 0
+    let CPUNumber = Int.random(in: 1...100)
+    var maxNumber = 101
+    var minNumber = 0
     let router: MainRouter = Router.shared
     let secondTryLabel  = UILabel()
     let guessLabel      = UILabel()
@@ -32,7 +38,7 @@ class SecondTryVC: UIViewController {
     
     func configureSecondTryLabelUI() {
         view.addSubview(secondTryLabel)
-        secondTryLabel.text = "Try № 2"
+        secondTryLabel.text = "Try № 2:"
         secondTryLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             secondTryLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
@@ -74,7 +80,7 @@ class SecondTryVC: UIViewController {
         guessButton.setTitleColor(.white, for: .normal)
         guessButton.layer.cornerRadius = 10
         guessButton.translatesAutoresizingMaskIntoConstraints = false
-        guessButton.addTarget(self, action: #selector(presentScoresVC), for: .touchUpInside)
+        guessButton.addTarget(self, action: #selector(tapGuessButton), for: .touchUpInside)
         NSLayoutConstraint.activate([
             guessButton.topAnchor.constraint(equalTo: numberTextField.bottomAnchor, constant: 40),
             guessButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -85,7 +91,7 @@ class SecondTryVC: UIViewController {
     
     func configureResultLabelUI() {
         view.addSubview(resultLabel)
-        resultLabel.text = "No, my number is less than yours"
+        resultLabel.text = ""
         resultLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             resultLabel.topAnchor.constraint(equalTo: guessButton.bottomAnchor, constant: 30),
@@ -96,6 +102,7 @@ class SecondTryVC: UIViewController {
     func checkText(_ text: String) -> Bool {
         if let intText = Int(text) {
             if intText >= 0 && intText <= 100 {
+                self.myNumber = intText
                 return true
             } else {
                 return false
@@ -104,8 +111,16 @@ class SecondTryVC: UIViewController {
         return false
     }
     
-    @objc func presentScoresVC() {
-        router.showScores(from: self)
+    @objc func tapGuessButton() {
+        if myNumber == CPUNumber {
+            router.showScores(from: self, myCounter: myCounter, CPUCounter: CPUCounter)
+        } else if myNumber > CPUNumber {
+            myCounter += 1
+            resultLabel.text = "No, my number is less than yours"
+        } else {
+            myCounter += 1
+            resultLabel.text = "No, my number is more than yours"
+        }
     }
     
 }
