@@ -9,6 +9,7 @@ import UIKit
 
 class StartVC: UIViewController {
     
+    let router: MainRouter = Router.shared
     let label   = UILabel()
     let button  = UIButton(type: .system)
     
@@ -39,7 +40,7 @@ class StartVC: UIViewController {
         button.setTitle("Start New Game", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(presentSecondView), for: .touchUpInside)
+        button.addTarget(self, action: #selector(presentEnterNumberVC), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
@@ -49,10 +50,8 @@ class StartVC: UIViewController {
         ])
     }
     
-    @objc func presentSecondView() {
-        
-        present(EnterNumberVC(), animated: true)
-        
+    @objc func presentEnterNumberVC() {
+        router.showEnterNumber(from: self)
     }
     
 }

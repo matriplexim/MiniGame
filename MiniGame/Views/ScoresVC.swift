@@ -9,6 +9,7 @@ import UIKit
 
 class ScoresVC: UIViewController {
     
+    let router: MainRouter = Router.shared
     let titleLabel      = UILabel()
     let myCountLabel    = UILabel()
     let CPUCountLabel   = UILabel()
@@ -65,6 +66,7 @@ class ScoresVC: UIViewController {
         mainButton.setTitle("Main menu", for: .normal)
         mainButton.setTitleColor(.white, for: .normal)
         mainButton.layer.cornerRadius = 10
+        mainButton.addTarget(self, action: #selector(presentMainMenu), for: .touchUpInside)
         mainButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             mainButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
@@ -84,4 +86,7 @@ class ScoresVC: UIViewController {
         ])
     }
     
+    @objc func presentMainMenu() {
+        router.showStart(from: self)
+    }
 }

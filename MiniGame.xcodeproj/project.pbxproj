@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F751358529814164003B330E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751358429814164003B330E /* Router.swift */; };
+		F7513587298141E5003B330E /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7513586298141E5003B330E /* MainRouter.swift */; };
+		F751358929814B3D003B330E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751358829814B3D003B330E /* Model.swift */; };
+		F751358B29814B49003B330E /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751358A29814B49003B330E /* Presenter.swift */; };
 		F79E0D7C297D4442005C1958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E0D7B297D4442005C1958 /* AppDelegate.swift */; };
 		F79E0D7E297D4442005C1958 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E0D7D297D4442005C1958 /* SceneDelegate.swift */; };
 		F79E0D80297D4442005C1958 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79E0D7F297D4442005C1958 /* StartVC.swift */; };
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F751358429814164003B330E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		F7513586298141E5003B330E /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		F751358829814B3D003B330E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F751358A29814B49003B330E /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		F79E0D78297D4442005C1958 /* MiniGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79E0D7B297D4442005C1958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F79E0D7D297D4442005C1958 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F75135832981414A003B330E /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				F751358429814164003B330E /* Router.swift */,
+				F7513586298141E5003B330E /* MainRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
 		F79E0D6F297D4442005C1958 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +127,7 @@
 				F79E0DAD297D47ED005C1958 /* Models */,
 				F79E0DAC297D47E8005C1958 /* Views */,
 				F79E0DAE297D5687005C1958 /* Presenters */,
+				F75135832981414A003B330E /* Routers */,
 				F79E0D84297D4444005C1958 /* Assets.xcassets */,
 				F79E0D86297D4444005C1958 /* LaunchScreen.storyboard */,
 				F79E0D89297D4444005C1958 /* Info.plist */,
@@ -149,6 +167,7 @@
 		F79E0DAD297D47ED005C1958 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F751358829814B3D003B330E /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,6 +175,7 @@
 		F79E0DAE297D5687005C1958 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				F751358A29814B49003B330E /* Presenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -291,9 +311,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F79E0D80297D4442005C1958 /* StartVC.swift in Sources */,
+				F751358B29814B49003B330E /* Presenter.swift in Sources */,
 				F79E0D7C297D4442005C1958 /* AppDelegate.swift in Sources */,
 				F79E0DB0297E9495005C1958 /* EnterNumberVC.swift in Sources */,
 				F79E0D7E297D4442005C1958 /* SceneDelegate.swift in Sources */,
+				F751358529814164003B330E /* Router.swift in Sources */,
+				F751358929814B3D003B330E /* Model.swift in Sources */,
+				F7513587298141E5003B330E /* MainRouter.swift in Sources */,
 				F7C59A45297FCC1100F1A6D1 /* SecondTryVC.swift in Sources */,
 				F7C59A47297FDCFB00F1A6D1 /* ScoresVC.swift in Sources */,
 				F79E0DB2297EF514005C1958 /* FirstTryVC.swift in Sources */,

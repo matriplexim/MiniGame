@@ -9,6 +9,8 @@ import UIKit
 
 class EnterNumberVC: UIViewController {
     
+    var guessNumber = 0
+    let router: MainRouter = Router.shared
     let textField   = UITextField()
     let enterButton = UIButton(type: .system)
     
@@ -46,7 +48,7 @@ class EnterNumberVC: UIViewController {
         enterButton.setTitle("Enter the Number", for: .normal)
         enterButton.setTitleColor(.white, for: .normal)
         enterButton.layer.cornerRadius = 10
-        enterButton.addTarget(self, action: #selector(presenFirstTryVC), for: .touchUpInside)
+        enterButton.addTarget(self, action: #selector(presentFirstTryVC), for: .touchUpInside)
         enterButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
@@ -59,6 +61,7 @@ class EnterNumberVC: UIViewController {
     func checkText(_ text: String) -> Bool {
         if let intText = Int(text) {
             if intText >= 0 && intText <= 100 {
+                self.guessNumber = intText
                 return true
             } else {
                 return false
@@ -67,8 +70,8 @@ class EnterNumberVC: UIViewController {
         return false
     }
     
-    @objc func presenFirstTryVC() {
-        present(FirstTryVC(), animated: true)
+    @objc func presentFirstTryVC() {
+        router.showFirstTry(from: self, number: guessNumber)
     }
     
 }

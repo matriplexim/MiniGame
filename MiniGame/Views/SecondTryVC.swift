@@ -9,6 +9,7 @@ import UIKit
 
 class SecondTryVC: UIViewController {
 
+    let router: MainRouter = Router.shared
     let secondTryLabel  = UILabel()
     let guessLabel      = UILabel()
     let numberTextField = UITextField()
@@ -73,6 +74,7 @@ class SecondTryVC: UIViewController {
         guessButton.setTitleColor(.white, for: .normal)
         guessButton.layer.cornerRadius = 10
         guessButton.translatesAutoresizingMaskIntoConstraints = false
+        guessButton.addTarget(self, action: #selector(presentScoresVC), for: .touchUpInside)
         NSLayoutConstraint.activate([
             guessButton.topAnchor.constraint(equalTo: numberTextField.bottomAnchor, constant: 40),
             guessButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -100,6 +102,10 @@ class SecondTryVC: UIViewController {
             }
         }
         return false
+    }
+    
+    @objc func presentScoresVC() {
+        router.showScores(from: self)
     }
     
 }

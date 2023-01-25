@@ -9,6 +9,13 @@ import UIKit
 
 class FirstTryVC: UIViewController {
     
+    let presenter = Presenter()
+    var guessNumber = 0
+    var predictNumber = 50
+    var maxNumber = 101
+    var minNumber = 0
+    var myCounter = 1
+    let router: MainRouter = Router.shared
     let tryLabel        = UILabel()
     let nameLabel       = UILabel()
     let questionLabel   = UILabel()
@@ -17,7 +24,6 @@ class FirstTryVC: UIViewController {
     let moreButton      = UIButton(type: .system)
     let equalsButton    = UIButton(type: .system)
     let lessButton      = UIButton(type: .system)
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +43,7 @@ class FirstTryVC: UIViewController {
     func configureTryLabelUI() {
         view.addSubview(tryLabel)
         tryLabel.translatesAutoresizingMaskIntoConstraints = false
-        tryLabel.text = "Try № 1"
+        tryLabel.text = "Try № 1: \(guessNumber)"
         NSLayoutConstraint.activate([
             tryLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
             tryLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
@@ -57,7 +63,7 @@ class FirstTryVC: UIViewController {
     func configureQuestionLabelUI() {
         view.addSubview(questionLabel)
         questionLabel.translatesAutoresizingMaskIntoConstraints = false
-        questionLabel.text = "Your number is - 80?"
+        questionLabel.text = "Your number is - \(predictNumber)?"
         NSLayoutConstraint.activate([
             questionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 30),
             questionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
@@ -91,6 +97,12 @@ class FirstTryVC: UIViewController {
         moreButton.setTitleColor(.label, for: .normal)
         equalsButton.setTitleColor(.label, for: .normal)
         lessButton.setTitleColor(.label, for: .normal)
+        equalsButton.addTarget(self, action: #selector(presentSecondTryVC), for: .touchUpInside)
+        moreButton.addTarget(self, action: #selector(tapMoreButton), for: .touchUpInside)
+        lessButton.addTarget(self, action: #selector(tapLessButton), for: .touchUpInside)
+        equalsButton.setTitleColor(.systemGray4, for: .disabled)
+        moreButton.setTitleColor(.systemGray4, for: .disabled)
+        lessButton.setTitleColor(.systemGray4, for: .disabled)
         NSLayoutConstraint.activate([
             moreButton.widthAnchor.constraint(equalToConstant: 60),
             moreButton.heightAnchor.constraint(equalToConstant: 60),
@@ -113,4 +125,57 @@ class FirstTryVC: UIViewController {
         ])
     }
     
+    @objc func presentSecondTryVC() {
+        if guessNumber == predictNumber {
+            router.showSecondTry(from: self)
+        } else {
+            self.nameLabel.text = "I think you are cheating"
+            equalsButton.layer.borderColor = UIColor.systemGray4.cgColor
+            equalsButton.isEnabled = false
+        }
+    }
+    
+    @objc func tapMoreButton() {
+        if self.guessNumber > self.predictNumber {
+            nameLabel.text = "Computer is guessing"
+            self.minNumber = predictNumber
+            let newNumber = presenter.moreNumber(minNumber: minNumber, maxNumber: maxNumber)
+            if newNumber != guessNumber {
+                predictNumber = newNumber
+                self.questionLabel.text = "Your number is - \(predictNumber)?"
+            } else {
+                predictNumber = newNumber
+                self.questionLabel.text = "Your number is - \(predictNumber)?"
+                moreButton.isEnabled = false
+                lessButton.isEnabled = false
+                equalsButton.isEnabled = true
+                equalsButton.layer.borderColor = UIColor.label.cgColor
+            }
+        } else {
+            self.nameLabel.text = "I think you are cheating"
+        }
+    }
+    
+    @objc func tapLessButton() {
+        if self.guessNumber < self.predictNumber {
+            nameLabel.text = "Computer is guessing"
+            self.maxNumber = predictNumber
+            let newNumber = presenter.moreNumber(minNumber: minNumber, maxNumber: maxNumber)
+            if newNumber != guessNumber {
+                predictNumber = newNumber
+                self.questionLabel.text = "Your number is - \(predictNumber)?"
+            } else {
+                predictNumber = newNumber
+                self.questionLabel.text = "Your number is - \(predictNumber)?"
+                moreButton.isEnabled = false
+                moreButton.layer.borderColor = UIColor.systemGray4.cgColor
+                lessButton.isEnabled = false
+                lessButton.layer.borderColor = UIColor.systemGray4.cgColor
+                equalsButton.isEnabled = true
+                equalsButton.layer.borderColor = UIColor.label.cgColor
+            }
+        } else {
+            self.nameLabel.text = "I think you are cheating"
+        }
+    }
 }
